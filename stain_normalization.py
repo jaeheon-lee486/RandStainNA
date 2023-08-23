@@ -98,14 +98,16 @@ def reinhard_cn(image_path, temp_path, save_path, isDebug=False, color_space=Non
 
 
 if __name__ == "__main__":
-    img_path_list = [
-        "./visualization/origin/TUM-AEPINLNQ.png",
-        "./visualization/origin/TUM-DFGFFNEY.png",
-        "./visualization/origin/TUM-EWFNFSQL.png",
-        "./visualization/origin/TUM-TCGA-CVATFAAT.png",
-    ]
-    template_path = "./visualization/origin/TUM-EWFNFSQL.png"
-    save_dir_path = "./visualization/stain_normalization"
+    # img_path_list = [
+    #     "./visualization/origin/TUM-AEPINLNQ.png",
+    #     "./visualization/origin/TUM-DFGFFNEY.png",
+    #     "./visualization/origin/TUM-EWFNFSQL.png",
+    #     "./visualization/origin/TUM-TCGA-CVATFAAT.png",
+    # ]
+    root = '/home/jhlee2/RandStainNA/visualization/before'
+    img_path_list = [os.path.join(root, x) for x in sorted(os.listdir(root))]
+    template_path = "./visualization/origin/TUM-DFGFFNEY.png"
+    save_dir_path = "./visualization/TUM-DFGFFNEY"
     if not os.path.exists(save_dir_path):
         os.mkdir(save_dir_path)
 
